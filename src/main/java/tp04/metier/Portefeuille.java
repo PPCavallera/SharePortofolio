@@ -48,18 +48,34 @@ public class Portefeuille {
         this.mapLignes = new HashMap();
     }
 
+    /**
+     * Obtention de l'action d'une ligne de protefeuillee donné
+     *
+     * @param a, l'action
+     * @return l'action si l'action existe, -1 sinon
+     */
     public Action getAction(Action a) {
-        if (a != null) {
-            return this.mapLignes.get(a) != null ? this.mapLignes.get(a).getAction() : null;
+
+        if (a != null && this.mapLignes.get(a) != null) {
+            return this.mapLignes.get(a).getAction();
+        } else {
+            return null;
         }
-        return null;
     }
 
+    /**
+     * Obtention de la quantité d'une ligne de protefeuillee donné
+     *
+     * @param a, l'action
+     * @return la quatité si l'action existe, -1 sinon
+     */
     public int getQuantite(Action a) {
-        if (a != null) {
+
+        if (a != null && this.mapLignes.get(a) != null) {
             return this.mapLignes.get(a).getQte();
+        } else {
+            return -1;
         }
-        return -1;
     }
 
     public void acheter(Action a, int q) {
@@ -70,17 +86,26 @@ public class Portefeuille {
         }
     }
 
+    /**
+     * Fonction de vente d'action
+     *
+     * @param a, Action à vendre
+     * @param q, Quantite à vendre
+     * @return, a si l'action a étévendue, null sinon
+     */
     public Action vendre(Action a, int q) {
-        if (this.mapLignes.containsKey(a) == true) {
-            if (this.mapLignes.get(a).getQte() > q) {
-                this.mapLignes.get(a).setQte(this.mapLignes.get(a).getQte() - q);
-                return a;
-            } else if (this.mapLignes.get(a).getQte() == q) {
+        Action tmp = null;
+        if (this.mapLignes.containsKey(a)) {
+            final int currentQte = this.mapLignes.get(a).getQte();
+            if (currentQte > q) {
+                this.mapLignes.get(a).setQte(currentQte - q);
+                tmp = a;
+            } else if (currentQte == q) {
                 this.mapLignes.remove(a);
-                return a;
+                tmp = a;
             }
         }
-        return null;
+        return tmp;
     }
 
     public String toString() {
