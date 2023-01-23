@@ -25,17 +25,17 @@ public abstract class Action {
 <span class="nc" id="L25">        return libelle;</span>
     }
 
-<span class="nc" id="L28">    public Action(String libelle) {</span>
-<span class="nc" id="L29">        this.libelle = libelle;</span>
-<span class="nc" id="L30">    }</span>
+<span class="fc" id="L28">    public Action(String libelle) {</span>
+<span class="fc" id="L29">        this.libelle = libelle;</span>
+<span class="fc" id="L30">    }</span>
 
     public abstract float valeur(Jour j);
     
     @Override
     public int hashCode() {
-<span class="nc" id="L36">        int hash = 3;</span>
-<span class="nc" id="L37">        hash = 53 * hash + Objects.hashCode(this.libelle);</span>
-<span class="nc" id="L38">        return hash;</span>
+<span class="fc" id="L36">        int hash = 3;</span>
+<span class="fc" id="L37">        hash = 53 * hash + Objects.hashCode(this.libelle);</span>
+<span class="fc" id="L38">        return hash;</span>
     }
 
     @Override
