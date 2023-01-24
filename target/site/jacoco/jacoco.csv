@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
 fr.utc.ida.forge.shareportfolioida:sharePortfolioIDA,tp04.metier,ActionSimple,32,9,4,0,6,3,4,1,2,1
 fr.utc.ida.forge.shareportfolioida:sharePortfolioIDA,tp04.metier,Cours,3,0,0,0,1,0,1,0,1,0
@@ -19,3 +20,14 @@ fr.utc.ida.forge.shareportfolioida:sharePortfolioIDA,tp04.metier,Portefeuille,17
 fr.utc.ida.forge.shareportfolioida:sharePortfolioIDA,tp04.metier,Jour,63,0,8,0,20,0,9,0,5,0
 fr.utc.ida.forge.shareportfolioida:sharePortfolioIDA,tp04.metier,Portefeuille.LignePortefeuille,23,0,0,0,9,0,5,0,5,0
 >>>>>>> refs/remotes/origin/master
+=======
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+fr.utc.ida.forge.shareportfolioida:sharePortfolioIDA,tp04.metier,ActionSimple,32,9,4,0,6,3,4,1,2,1
+fr.utc.ida.forge.shareportfolioida:sharePortfolioIDA,tp04.metier,Cours,3,0,0,0,1,0,1,0,1,0
+fr.utc.ida.forge.shareportfolioida:sharePortfolioIDA,tp04.metier,Action,24,24,6,0,8,8,4,4,1,4
+fr.utc.ida.forge.shareportfolioida:sharePortfolioIDA,tp04.metier,ActionSimple.Cours,15,0,0,0,6,0,3,0,3,0
+fr.utc.ida.forge.shareportfolioida:sharePortfolioIDA,tp04.metier,ActionComposee,47,0,2,0,10,0,4,0,3,0
+fr.utc.ida.forge.shareportfolioida:sharePortfolioIDA,tp04.metier,Portefeuille,177,0,20,0,35,0,18,0,8,0
+fr.utc.ida.forge.shareportfolioida:sharePortfolioIDA,tp04.metier,Jour,63,0,8,0,20,0,9,0,5,0
+fr.utc.ida.forge.shareportfolioida:sharePortfolioIDA,tp04.metier,Portefeuille.LignePortefeuille,23,0,0,0,9,0,5,0,5,0
+>>>>>>> cfd42f68c45666ae5e834d4cfc81a2979a92beff
