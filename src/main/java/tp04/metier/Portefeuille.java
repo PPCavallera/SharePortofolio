@@ -87,7 +87,15 @@ public class Portefeuille {
             return -1;
         }
     }
-
+    
+    /**
+     * Fonction d'achat d'action
+     * 
+     * @param a, l'action
+     * @param q, la quantité achetée
+     * @return l'action si elle est achetée, null sinon
+     */
+    
    public Action acheter(Action a, int q) {
         if (q > 0 && a != null) { // 
             if (!this.mapLignes.containsKey(a)) {
