@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\T.D\OneDrive\M2\Demarche Projet Agile\SharePortofolio\src\test\java\tp04\metier\ActionTest.java
 C:\Users\T.D\OneDrive\M2\Demarche Projet Agile\SharePortofolio\src\test\java\tp04\metier\PortefeuilleAcheterTest.java
 C:\Users\T.D\OneDrive\M2\Demarche Projet Agile\SharePortofolio\src\test\java\tp04\metier\JourTest.java
@@ -5,3 +6,11 @@ C:\Users\T.D\OneDrive\M2\Demarche Projet Agile\SharePortofolio\src\test\java\tp0
 C:\Users\T.D\OneDrive\M2\Demarche Projet Agile\SharePortofolio\src\test\java\tp04\metier\ActionComposeeTest.java
 C:\Users\T.D\OneDrive\M2\Demarche Projet Agile\SharePortofolio\src\test\java\tp04\metier\ActionSimpleTest.java
 C:\Users\T.D\OneDrive\M2\Demarche Projet Agile\SharePortofolio\src\test\java\tp04\metier\CoursTest.java
+=======
+C:\Users\nunup\Cours\M2\sharePortfolioIDA\src\test\java\tp04\metier\ActionTest.java
+C:\Users\nunup\Cours\M2\sharePortfolioIDA\src\test\java\tp04\metier\ActionSimpleTest.java
+C:\Users\nunup\Cours\M2\sharePortfolioIDA\src\test\java\tp04\metier\PortefeuilleTestUS1.java
+C:\Users\nunup\Cours\M2\sharePortfolioIDA\src\test\java\tp04\metier\CoursTest.java
+C:\Users\nunup\Cours\M2\sharePortfolioIDA\src\test\java\tp04\metier\JourTest.java
+C:\Users\nunup\Cours\M2\sharePortfolioIDA\src\test\java\tp04\metier\ActionComposeeTest.java
+>>>>>>> refs/remotes/origin/master
