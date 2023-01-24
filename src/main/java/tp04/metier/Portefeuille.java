@@ -104,18 +104,18 @@ public class Portefeuille {
      * @return, a si l'action a étévendue, null sinon
      */
     public Action vendre(Action a, int q) {
-        Action tmp = null;
+        Action returnedAction = null;
         if (this.mapLignes.containsKey(a)) {
             final int currentQte = this.mapLignes.get(a).getQte();
             if (currentQte > q) {
                 this.mapLignes.get(a).setQte(currentQte - q);
-                tmp = a;
+                returnedAction = a;
             } else if (currentQte == q) {
                 this.mapLignes.remove(a);
-                tmp = a;
+                returnedAction = a;
             }
         }
-        return tmp;
+        return returnedAction;
     }
 
     public String toString() {
