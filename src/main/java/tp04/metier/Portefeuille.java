@@ -5,6 +5,7 @@
  */
 package tp04.metier;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -61,6 +62,15 @@ public class Portefeuille {
         } else {
             return null;
         }
+    }
+
+    public float getGlobalValue(Jour j) {
+        float total = 0;
+        for (Map.Entry<Action, LignePortefeuille> entry : this.mapLignes.entrySet()) {
+            LignePortefeuille value = entry.getValue();
+            total += value.getQte() * value.getAction().valeur(j);
+        }
+        return total;
     }
 
     /**
