@@ -4,7 +4,7 @@
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="18.0.2.1+1-1"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-18.0.2.1\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:\Users\nunup\Cours\M2\sharePortfolioIDA"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\T.D\OneDrive\M2\Demarche Projet Agile\SharePortofolio"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -15,11 +15,11 @@
     <property name="user.country" value="FR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\nunup\Cours\M2\sharePortfolioIDA"/>
+    <property name="user.dir" value="C:\Users\T.D\OneDrive\M2\Demarche Projet Agile\SharePortofolio"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="18.0.2.1+1-1"/>
     <property name="os.arch" value="amd64"/>
-    <property name="java.io.tmpdir" value="C:\Users\nunup\AppData\Local\Temp\"/>
+    <property name="java.io.tmpdir" value="C:\Users\T.D\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
@@ -28,7 +28,7 @@
     <property name="maven.ext.class.path" value="C:\Program Files\NetBeans-16\netbeans\java\maven-nblib\netbeans-eventspy.jar"/>
     <property name="classworlds.conf" value="C:\Program Files\NetBeans-16\netbeans\java\maven\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-18.0.2.1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\app\client\PPC\product\12.2.0\client_1;C:\app\client\PPC\product\12.2.0\client_1\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Users\nunup\AppData\Local\Microsoft\WindowsApps;C:\Users\nunup\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\nunup\AppData\Local\Pandoc\;C:\Users\nunup\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C:\Users\nunup\AppData\Local\gitkraken\bin;C:\Users\nunup\.dotnet\tools;C:\Users\nunup\AppData\Local\Programs\Python\Python310;C:\Users\nunup\AppData\Local\Programs\Python\Python310\Scripts;C:\Users\nunup\AppData\Roaming\npm;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-18.0.2.1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\usbipd-win\;C:\Program Files\PowerShell\7\;C:\Program Files\nodejs\;C:\Users\T.D\AppData\Local\Microsoft\WindowsApps;C:\Users\T.D\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\T.D\AppData\Local\Pandoc\;C:\Users\T.D\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C:\Users\T.D\AppData\Roaming\npm;."/>
     <property name="maven.conf" value="C:\Program Files\NetBeans-16\netbeans\java\maven/conf"/>
     <property name="jdk.debug" value="release"/>
     <property name="java.class.version" value="62.0"/>
@@ -36,15 +36,15 @@
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="10.0"/>
     <property name="library.jansi.path" value="C:\Program Files\NetBeans-16\netbeans\java\maven\lib\jansi-native"/>
-    <property name="user.home" value="C:\Users\nunup"/>
+    <property name="user.home" value="C:\Users\T.D"/>
     <property name="user.timezone" value="Europe/Paris"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.specification.version" value="18"/>
-    <property name="user.name" value="PPC"/>
+    <property name="user.name" value="T.D"/>
     <property name="java.class.path" value="C:\Program Files\NetBeans-16\netbeans\java\maven\boot\plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="18"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans-16\netbeans\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 clean install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans-16\netbeans\java\maven-nblib\netbeans-eventspy.jar install"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-18.0.2.1"/>
     <property name="user.language" value="fr"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
