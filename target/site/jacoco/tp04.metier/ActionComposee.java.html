@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package tp04.metier;
 
 import java.util.HashMap;
@@ -14,30 +13,39 @@ import java.util.Map;
  * @author perussel
  */
 public class ActionComposee extends Action {
+
     // attribut lien
     Map&lt;ActionSimple, Float&gt; mapPanier;
 
     public ActionComposee(String libelle) {
-<span class="nc" id="L21">        super(libelle);</span>
-<span class="nc" id="L22">        this.mapPanier = new HashMap();</span>
-<span class="nc" id="L23">    }</span>
-    
-    public void enrgComposition(ActionSimple as, float pourcentage) {
-<span class="nc" id="L26">        this.mapPanier.put(as, pourcentage);</span>
-<span class="nc" id="L27">    }</span>
+<span class="fc" id="L21">        super(libelle);</span>
+<span class="fc" id="L22">        this.mapPanier = new HashMap();</span>
+<span class="fc" id="L23">    }</span>
+
+    public ActionSimple enrgComposition(ActionSimple as, float pourcentage) {
+<span class="fc" id="L26">        ActionSimple returnedAction = null;</span>
+<span class="fc bfc" id="L27" title="All 6 branches covered.">        if (pourcentage &gt; 0 &amp; as != null) {</span>
+<span class="fc" id="L28">            this.mapPanier.put(as, pourcentage);</span>
+<span class="fc" id="L29">            returnedAction = as;</span>
+        }
+<span class="fc" id="L31">        return returnedAction;</span>
+    }
+
+    public boolean containsAction(ActionSimple a) {
+<span class="fc" id="L35">        return this.mapPanier.containsKey(a);</span>
+    }
 
     @Override
     public float valeur(Jour j) {
         float valeur;
-        
-<span class="nc" id="L33">        valeur = 0;</span>
-<span class="nc bnc" id="L34" title="All 2 branches missed.">        for(ActionSimple as : this.mapPanier.keySet()) {</span>
-<span class="nc" id="L35">            valeur = valeur + (as.valeur(j) * this.mapPanier.get(as));</span>
-<span class="nc" id="L36">        }</span>
-        
-<span class="nc" id="L38">        return valeur;</span>
+
+<span class="nc" id="L42">        valeur = 0;</span>
+<span class="nc bnc" id="L43" title="All 2 branches missed.">        for (ActionSimple as : this.mapPanier.keySet()) {</span>
+<span class="nc" id="L44">            valeur = valeur + (as.valeur(j) * this.mapPanier.get(as));</span>
+<span class="nc" id="L45">        }</span>
+
+<span class="nc" id="L47">        return valeur;</span>
     }
-    
-    
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

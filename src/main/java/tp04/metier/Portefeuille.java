@@ -88,11 +88,19 @@ public class Portefeuille {
         }
     }
 
-    public void acheter(Action a, int q) {
-        if (this.mapLignes.containsKey(a) == false) {
-            this.mapLignes.put(a, new LignePortefeuille(a, q));
+   public Action acheter(Action a, int q) {
+        if (q > 0 && a != null) { // 
+            if (!this.mapLignes.containsKey(a)) {
+                
+                this.mapLignes.put(a, new LignePortefeuille(a, q));
+                
+                return a;
+            } else {
+                this.mapLignes.get(a).setQte(this.mapLignes.get(a).getQte() + q);
+                return a;
+            }
         } else {
-            this.mapLignes.get(a).setQte(this.mapLignes.get(a).getQte() + q);
+            return null;
         }
     }
 
@@ -118,6 +126,7 @@ public class Portefeuille {
         return returnedAction;
     }
 
+
     public String toString() {
         return this.mapLignes.toString();
     }
@@ -129,4 +138,21 @@ public class Portefeuille {
         }
         return total;
     }
+
+    /**
+     * Returns the qte of action if it exists in the Protefeuille If the actions
+     * does not exists in the Portefeuille, returns 0
+     *
+     * @param action
+     * @return The quantity in the Portefeuille or 0.
+     */
+    public int getQteAction(Action action) {
+        final LignePortefeuille lp = this.mapLignes.get(action);
+        if (lp != null) {
+            return lp.getQte();
+        } else {
+            return 0;
+        }
+    }
 }
+
