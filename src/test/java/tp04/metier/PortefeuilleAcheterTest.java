@@ -72,8 +72,8 @@ public class PortefeuilleAcheterTest {
         final Action new_act = p.acheter(act, -1);
         Assertions.assertNull(new_act);
     }
-    
-    
+
+
     @Test
     public void testAcheterZero() {
         // init un portefeuille avec l'action
