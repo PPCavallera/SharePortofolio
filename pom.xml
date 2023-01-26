@@ -81,7 +81,7 @@ specific language governing permissions and
                 <artifactId>apache-rat-plugin</artifactId>
                 <configuration>
                     <consoleOutput>true</consoleOutput>
-                    <reportFile>/rat.txt</reportFile>
+                    <reportFile>/home/runner/work/SharePortofolio/SharePortofolio/src/main/rat.txt</reportFile>
                     <licenseFamilies>
                         <licenseFamily implementation="org.apache.rat.license.SimpleLicenseFamily">
                             <familyName>Apache License Version 2.0</familyName>
