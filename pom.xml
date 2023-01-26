@@ -58,6 +58,18 @@
             <plugin>
                 <groupId>org.apache.rat</groupId>
                 <artifactId>apache-rat-plugin</artifactId>
+                <configuration>
+                    
+                    <addLicenseHeaders>
+                        true
+                    </addLicenseHeaders>
+                    <licenses>
+                        <license>
+                            <name>The Apache License, Version 2.0</name>
+                            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+                        </license>
+                    </licenses>
+                </configuration>
                 <version>0.13</version>
             </plugin>
             <plugin>

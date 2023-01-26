@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Portefeuille.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">fr.utc.ida.forge.shareportfolioida:sharePortfolioIDA</a> &gt; <a href="index.source.html" class="el_package">tp04.metier</a> &gt; <span class="el_source">Portefeuille.java</span></div><h1>Portefeuille.java</h1><pre class="source lang-java linenums">
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Portefeuille.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">fr.utc.ida.forge.shareportfolioida:sharePortfolioIDA</a> &gt; <a href="index.source.html" class="el_package">tp04.metier</a> &gt; <span class="el_source">Portefeuille.java</span></div><h1>Portefeuille.java</h1><pre class="source lang-java linenums">/*
+ * Copyright 2023 PPC.
+ *
+ * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package tp04.metier;
 
 import java.util.Collection;
@@ -20,30 +34,30 @@ public class Portefeuille {
         private int qte;
 
         public int getQte() {
-<span class="fc" id="L23">            return qte;</span>
+<span class="fc" id="L37">            return qte;</span>
         }
 
         public void setQte(int qte) {
-<span class="fc" id="L27">            this.qte = qte;</span>
-<span class="fc" id="L28">        }</span>
+<span class="fc" id="L41">            this.qte = qte;</span>
+<span class="fc" id="L42">        }</span>
 
         public Action getAction() {
-<span class="nc" id="L31">            return this.action;</span>
+<span class="fc" id="L45">            return this.action;</span>
         }
 
-<span class="fc" id="L34">        public LignePortefeuille(Action action, int qte) {</span>
-<span class="fc" id="L35">            this.action = action;</span>
-<span class="fc" id="L36">            this.qte = qte;</span>
-<span class="fc" id="L37">        }</span>
+<span class="fc" id="L48">        public LignePortefeuille(Action action, int qte) {</span>
+<span class="fc" id="L49">            this.action = action;</span>
+<span class="fc" id="L50">            this.qte = qte;</span>
+<span class="fc" id="L51">        }</span>
 
         public String toString() {
-<span class="nc" id="L40">            return Integer.toString(qte);</span>
+<span class="nc" id="L54">            return Integer.toString(qte);</span>
         }
     }
 
-<span class="fc" id="L44">    public Portefeuille() {</span>
-<span class="fc" id="L45">        this.mapLignes = new HashMap();</span>
-<span class="fc" id="L46">    }</span>
+<span class="fc" id="L58">    public Portefeuille() {</span>
+<span class="fc" id="L59">        this.mapLignes = new HashMap();</span>
+<span class="fc" id="L60">    }</span>
 
     /**
      * Obtention de l'action d'une ligne de protefeuillee donné
@@ -52,21 +66,21 @@ public class Portefeuille {
      * @return l'action si l'action existe, -1 sinon
      */
     public Action getAction(Action a) {
-<span class="nc" id="L55">        LignePortefeuille currentAction = this.mapLignes.get(a);</span>
-<span class="nc bnc" id="L56" title="All 4 branches missed.">        if (a != null &amp;&amp; currentAction != null) {</span>
-<span class="nc" id="L57">            return currentAction.getAction();</span>
+<span class="nc" id="L69">        LignePortefeuille currentAction = this.mapLignes.get(a);</span>
+<span class="nc bnc" id="L70" title="All 4 branches missed.">        if (a != null &amp;&amp; currentAction != null) {</span>
+<span class="nc" id="L71">            return currentAction.getAction();</span>
         }
-<span class="nc" id="L59">        return null;</span>
+<span class="nc" id="L73">        return null;</span>
 
     }
 
     public float getGlobalValue(Jour j) {
-<span class="nc" id="L64">        float total = 0;</span>
-<span class="nc bnc" id="L65" title="All 2 branches missed.">        for (Map.Entry&lt;Action, LignePortefeuille&gt; entry : this.mapLignes.entrySet()) {</span>
-<span class="nc" id="L66">            LignePortefeuille value = entry.getValue();</span>
-<span class="nc" id="L67">            total += value.getQte() * value.getAction().valeur(j);</span>
-<span class="nc" id="L68">        }</span>
-<span class="nc" id="L69">        return total;</span>
+<span class="fc" id="L78">        float total = 0;</span>
+<span class="fc bfc" id="L79" title="All 2 branches covered.">        for (Map.Entry&lt;Action, LignePortefeuille&gt; entry : this.mapLignes.entrySet()) {</span>
+<span class="fc" id="L80">            LignePortefeuille value = entry.getValue();</span>
+<span class="fc" id="L81">            total += value.getQte() * value.getAction().valeur(j);</span>
+<span class="fc" id="L82">        }</span>
+<span class="fc" id="L83">        return total;</span>
     }
 
     /**
@@ -77,11 +91,11 @@ public class Portefeuille {
      */
     public int getQuantite(Action a) {
 
-<span class="nc" id="L80">        LignePortefeuille currentLine = this.mapLignes.get(a);</span>
-<span class="nc bnc" id="L81" title="All 4 branches missed.">        if (a != null &amp;&amp; currentLine != null) {</span>
-<span class="nc" id="L82">            return currentLine.getQte();</span>
+<span class="nc" id="L94">        LignePortefeuille currentLine = this.mapLignes.get(a);</span>
+<span class="nc bnc" id="L95" title="All 4 branches missed.">        if (a != null &amp;&amp; currentLine != null) {</span>
+<span class="nc" id="L96">            return currentLine.getQte();</span>
         }
-<span class="nc" id="L84">        return -1;</span>
+<span class="nc" id="L98">        return -1;</span>
     }
 
     /**
@@ -92,18 +106,18 @@ public class Portefeuille {
      * @return l'action si elle est achetée, null sinon
      */
     public Action acheter(Action a, int q) {
-<span class="fc bfc" id="L95" title="All 4 branches covered.">        if (q &gt; 0 &amp;&amp; a != null) { // </span>
-<span class="fc bfc" id="L96" title="All 2 branches covered.">            if (!this.mapLignes.containsKey(a)) {</span>
+<span class="fc bfc" id="L109" title="All 4 branches covered.">        if (q &gt; 0 &amp;&amp; a != null) { // </span>
+<span class="fc bfc" id="L110" title="All 2 branches covered.">            if (!this.mapLignes.containsKey(a)) {</span>
 
-<span class="fc" id="L98">                this.mapLignes.put(a, new LignePortefeuille(a, q));</span>
+<span class="fc" id="L112">                this.mapLignes.put(a, new LignePortefeuille(a, q));</span>
 
-<span class="fc" id="L100">                return a;</span>
+<span class="fc" id="L114">                return a;</span>
             } else {
-<span class="fc" id="L102">                this.mapLignes.get(a).setQte(this.mapLignes.get(a).getQte() + q);</span>
-<span class="fc" id="L103">                return a;</span>
+<span class="fc" id="L116">                this.mapLignes.get(a).setQte(this.mapLignes.get(a).getQte() + q);</span>
+<span class="fc" id="L117">                return a;</span>
             }
         } else {
-<span class="fc" id="L106">            return null;</span>
+<span class="fc" id="L120">            return null;</span>
         }
     }
 
@@ -115,30 +129,30 @@ public class Portefeuille {
      * @return, a si l'action a étévendue, null sinon
      */
     public Action vendre(Action a, int q) {
-<span class="nc" id="L118">        Action returnedAction = null;</span>
-<span class="nc bnc" id="L119" title="All 2 branches missed.">        if (this.mapLignes.containsKey(a)) {</span>
-<span class="nc" id="L120">            final int currentQte = this.mapLignes.get(a).getQte();</span>
-<span class="nc bnc" id="L121" title="All 2 branches missed.">            if (currentQte &gt; q) {</span>
-<span class="nc" id="L122">                this.mapLignes.get(a).setQte(currentQte - q);</span>
-<span class="nc" id="L123">                returnedAction = a;</span>
-<span class="nc bnc" id="L124" title="All 2 branches missed.">            } else if (currentQte == q) {</span>
-<span class="nc" id="L125">                this.mapLignes.remove(a);</span>
-<span class="nc" id="L126">                returnedAction = a;</span>
+<span class="nc" id="L132">        Action returnedAction = null;</span>
+<span class="nc bnc" id="L133" title="All 2 branches missed.">        if (this.mapLignes.containsKey(a)) {</span>
+<span class="nc" id="L134">            final int currentQte = this.mapLignes.get(a).getQte();</span>
+<span class="nc bnc" id="L135" title="All 2 branches missed.">            if (currentQte &gt; q) {</span>
+<span class="nc" id="L136">                this.mapLignes.get(a).setQte(currentQte - q);</span>
+<span class="nc" id="L137">                returnedAction = a;</span>
+<span class="nc bnc" id="L138" title="All 2 branches missed.">            } else if (currentQte == q) {</span>
+<span class="nc" id="L139">                this.mapLignes.remove(a);</span>
+<span class="nc" id="L140">                returnedAction = a;</span>
             }
         }
-<span class="nc" id="L129">        return returnedAction;</span>
+<span class="nc" id="L143">        return returnedAction;</span>
     }
 
     public String toString() {
-<span class="nc" id="L133">        return this.mapLignes.toString();</span>
+<span class="nc" id="L147">        return this.mapLignes.toString();</span>
     }
 
     public float valeur(Jour j) {
-<span class="nc" id="L137">        float total = 0;</span>
-<span class="nc bnc" id="L138" title="All 2 branches missed.">        for (LignePortefeuille lp : this.mapLignes.values()) {</span>
-<span class="nc" id="L139">            total = total + (lp.getQte() * lp.getAction().valeur(j));</span>
-<span class="nc" id="L140">        }</span>
-<span class="nc" id="L141">        return total;</span>
+<span class="nc" id="L151">        float total = 0;</span>
+<span class="nc bnc" id="L152" title="All 2 branches missed.">        for (LignePortefeuille lp : this.mapLignes.values()) {</span>
+<span class="nc" id="L153">            total = total + (lp.getQte() * lp.getAction().valeur(j));</span>
+<span class="nc" id="L154">        }</span>
+<span class="nc" id="L155">        return total;</span>
     }
 
     /**
@@ -149,11 +163,11 @@ public class Portefeuille {
      * @return The quantity in the Portefeuille or 0.
      */
     public int getQteAction(Action action) {
-<span class="fc" id="L152">        final LignePortefeuille lp = this.mapLignes.get(action);</span>
-<span class="fc bfc" id="L153" title="All 2 branches covered.">        if (lp != null) {</span>
-<span class="fc" id="L154">            return lp.getQte();</span>
+<span class="fc" id="L166">        final LignePortefeuille lp = this.mapLignes.get(action);</span>
+<span class="fc bfc" id="L167" title="All 2 branches covered.">        if (lp != null) {</span>
+<span class="fc" id="L168">            return lp.getQte();</span>
         } else {
-<span class="fc" id="L156">            return 0;</span>
+<span class="fc" id="L170">            return 0;</span>
         }
     }
 }
