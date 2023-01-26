@@ -76,9 +76,8 @@ public class Portefeuille {
 
     public float getGlobalValue(Jour j) {
         float total = 0;
-        for (Map.Entry<Action, LignePortefeuille> entry : this.mapLignes.entrySet()) {
-            LignePortefeuille value = entry.getValue();
-            total += value.getQte() * value.getAction().valeur(j);
+        for (LignePortefeuille lp : this.mapLignes.values()) {
+            total += lp.getQte() * lp.getAction().valeur(j);
         }
         return total;
     }
