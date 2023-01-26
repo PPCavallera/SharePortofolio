@@ -15,6 +15,8 @@
  */
 package tp04.metier;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -22,9 +24,9 @@ import org.junit.jupiter.api.Test;
  *
  * @author PPC
  */
-public class PortefeuilleTestUS1 {
+public class PortefeuilleTestVendre {
 
-    public PortefeuilleTestUS1() {
+    public PortefeuilleTestVendre() {
     }
 
     @Test
@@ -65,61 +67,25 @@ public class PortefeuilleTestUS1 {
     }
 
     @Test
-    public void testRecupValeurGlobale() {
+    public void testVendreActionComposeeAll() {
         final Portefeuille po = new Portefeuille();
-        final ActionSimple as = new ActionSimple("Toto");
-        final ActionSimple as2 = new ActionSimple("Tata");
-        final Jour j = new Jour(2023, 1);
-        as.enrgCours(j, 1);
-        as2.enrgCours(j, 2);
-        po.acheter(as, 1);
-        po.acheter(as2, 1);
 
-        Assertions.assertEquals(3, po.getGlobalValue(j));
+        ActionComposee ac = new ActionComposee("ac");
+        ActionSimple as1, as2;
+        as1 = new ActionSimple("as1");
+        as2 = new ActionSimple("as2");
+        List<ActionSimple> listeAs = new ArrayList<>();
+        List<Float> listePourcentage = new ArrayList<>();
+        listeAs.add(as1);
+        listeAs.add(as2);
+        listePourcentage.add(0.4f);
+        listePourcentage.add(0.6f);
+
+        ac.enrgComposition(listeAs, listePourcentage);
+        po.acheter(ac, 4);
+        Assertions.assertEquals(ac, po.getAction(ac));
+        Assertions.assertEquals(4, po.getQuantite(ac));
+
     }
 
-    @Test
-    public void testRecupValeurGlobalePlsrsJours() {
-        final Portefeuille po = new Portefeuille();
-        final ActionSimple as1 = new ActionSimple("Toto");
-        final ActionSimple as2 = new ActionSimple("Tata");
-        final Jour j1 = new Jour(2023, 1);
-        final Jour j2 = new Jour(2023, 2);
-
-        as1.enrgCours(j1, 1);
-        as2.enrgCours(j1, 2);
-        as1.enrgCours(j2, 4);
-        as2.enrgCours(j2, 5);
-
-        po.acheter(as1, 2);
-        po.acheter(as2, 3);
-
-        Assertions.assertEquals(8, po.getGlobalValue(j1));
-        Assertions.assertEquals(23, po.getGlobalValue(j2));
-    }
-
-    @Test
-    public void testRecupValeurGlobaleJourAbsent() {
-        final Portefeuille po = new Portefeuille();
-        final ActionSimple as1 = new ActionSimple("Toto");
-        final ActionSimple as2 = new ActionSimple("Tata");
-        final Jour j1 = new Jour(2023, 1);
-        final Jour j3 = new Jour(2023, 2);
-
-        as1.enrgCours(j1, 1);
-        as2.enrgCours(j1, 2);
-
-        po.acheter(as1, 2);
-        po.acheter(as2, 3);
-        
-        Assertions.assertEquals(0, po.getGlobalValue(j3));
-    }
-    
-        @Test
-    public void testRecupValeurGlobaleJourNull() {
-        final Portefeuille po = new Portefeuille();
-       
-        Assertions.assertEquals(0, po.getGlobalValue(null));
-    }
-    
 }
