@@ -1,8 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ActionComposee.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">fr.utc.ida.forge.shareportfolioida:sharePortfolioIDA</a> &gt; <a href="index.source.html" class="el_package">tp04.metier</a> &gt; <span class="el_source">ActionComposee.java</span></div><h1>ActionComposee.java</h1><pre class="source lang-java linenums">/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ActionComposee.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">fr.utc.ida.forge.shareportfolioida:sharePortfolioIDA</a> &gt; <a href="index.source.html" class="el_package">tp04.metier</a> &gt; <span class="el_source">ActionComposee.java</span></div><h1>ActionComposee.java</h1><pre class="source lang-java linenums">
 package tp04.metier;
 
 import java.util.HashMap;
@@ -18,33 +14,33 @@ public class ActionComposee extends Action {
     Map&lt;ActionSimple, Float&gt; mapPanier;
 
     public ActionComposee(String libelle) {
-<span class="fc" id="L21">        super(libelle);</span>
-<span class="fc" id="L22">        this.mapPanier = new HashMap();</span>
-<span class="fc" id="L23">    }</span>
+<span class="fc" id="L17">        super(libelle);</span>
+<span class="fc" id="L18">        this.mapPanier = new HashMap();</span>
+<span class="fc" id="L19">    }</span>
 
     public ActionSimple enrgComposition(ActionSimple as, float pourcentage) {
-<span class="fc" id="L26">        ActionSimple returnedAction = null;</span>
-<span class="fc bfc" id="L27" title="All 6 branches covered.">        if (pourcentage &gt; 0 &amp; as != null) {</span>
-<span class="fc" id="L28">            this.mapPanier.put(as, pourcentage);</span>
-<span class="fc" id="L29">            returnedAction = as;</span>
+<span class="fc" id="L22">        ActionSimple returnedAction = null;</span>
+<span class="fc bfc" id="L23" title="All 6 branches covered.">        if (pourcentage &gt; 0 &amp; as != null) {</span>
+<span class="fc" id="L24">            this.mapPanier.put(as, pourcentage);</span>
+<span class="fc" id="L25">            returnedAction = as;</span>
         }
-<span class="fc" id="L31">        return returnedAction;</span>
+<span class="fc" id="L27">        return returnedAction;</span>
     }
 
     public boolean containsAction(ActionSimple a) {
-<span class="fc" id="L35">        return this.mapPanier.containsKey(a);</span>
+<span class="fc" id="L31">        return this.mapPanier.containsKey(a);</span>
     }
 
     @Override
     public float valeur(Jour j) {
         float valeur;
 
-<span class="nc" id="L42">        valeur = 0;</span>
-<span class="nc bnc" id="L43" title="All 2 branches missed.">        for (ActionSimple as : this.mapPanier.keySet()) {</span>
-<span class="nc" id="L44">            valeur = valeur + (as.valeur(j) * this.mapPanier.get(as));</span>
-<span class="nc" id="L45">        }</span>
+<span class="nc" id="L38">        valeur = 0;</span>
+<span class="nc bnc" id="L39" title="All 2 branches missed.">        for (ActionSimple as : this.mapPanier.keySet()) {</span>
+<span class="nc" id="L40">            valeur = valeur + (as.valeur(j) * this.mapPanier.get(as));</span>
+<span class="nc" id="L41">        }</span>
 
-<span class="nc" id="L47">        return valeur;</span>
+<span class="nc" id="L43">        return valeur;</span>
     }
 
 }
