@@ -56,12 +56,12 @@ public class Portefeuille {
      * @return l'action si l'action existe, -1 sinon
      */
     public Action getAction(Action a) {
-
-        if (a != null && this.mapLignes.get(a) != null) {
-            return this.mapLignes.get(a).getAction();
-        } else {
-            return null;
+        LignePortefeuille currentAction = this.mapLignes.get(a);
+        if (a != null && currentAction != null) {
+            return currentAction.getAction();
         }
+        return null;
+
     }
 
     public float getGlobalValue(Jour j) {
@@ -81,27 +81,26 @@ public class Portefeuille {
      */
     public int getQuantite(Action a) {
 
-        if (a != null && this.mapLignes.get(a) != null) {
-            return this.mapLignes.get(a).getQte();
-        } else {
-            return -1;
+        LignePortefeuille currentLine = this.mapLignes.get(a);
+        if (a != null && currentLine != null) {
+            return currentLine.getQte();
         }
+        return -1;
     }
-    
+
     /**
      * Fonction d'achat d'action
-     * 
+     *
      * @param a, l'action
      * @param q, la quantité achetée
      * @return l'action si elle est achetée, null sinon
      */
-    
-   public Action acheter(Action a, int q) {
+    public Action acheter(Action a, int q) {
         if (q > 0 && a != null) { // 
             if (!this.mapLignes.containsKey(a)) {
-                
+
                 this.mapLignes.put(a, new LignePortefeuille(a, q));
-                
+
                 return a;
             } else {
                 this.mapLignes.get(a).setQte(this.mapLignes.get(a).getQte() + q);
@@ -134,7 +133,6 @@ public class Portefeuille {
         return returnedAction;
     }
 
-
     public String toString() {
         return this.mapLignes.toString();
     }
@@ -163,4 +161,3 @@ public class Portefeuille {
         }
     }
 }
-
