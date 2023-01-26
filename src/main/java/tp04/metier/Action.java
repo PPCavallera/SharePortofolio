@@ -22,7 +22,7 @@ import java.util.Objects;
  * @author perussel
  */
 public abstract class Action {
-    
+
     private String libelle;
 
     /**
@@ -34,12 +34,21 @@ public abstract class Action {
         return libelle;
     }
 
+    /**
+     * Action constructor
+     * @param libelle
+     */
     public Action(String libelle) {
         this.libelle = libelle;
     }
 
-    public abstract float valeur(Jour j);
     
+    public abstract float valeur(Jour j);
+
+    /**
+     * Hash method overrided
+     * @return action's hashcode
+     */
     @Override
     public int hashCode() {
         int hash = 3;
@@ -47,6 +56,11 @@ public abstract class Action {
         return hash;
     }
 
+    /**
+     * Equals override method
+     * @param obj
+     * @return boolean
+     */
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -62,6 +76,10 @@ public abstract class Action {
         return true;
     }
 
+    /**
+     * To string method
+     * @return libelle
+     */
     public String toString() {
         return this.getLibelle();
     }

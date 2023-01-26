@@ -74,6 +74,11 @@ public class Portefeuille {
 
     }
 
+    /**
+     * Get the global value for a given day
+     * @param j, the day
+     * @return the global value for j
+     */
     public float getGlobalValue(Jour j) {
         float total = 0;
         for (LignePortefeuille lp : this.mapLignes.values()) {
