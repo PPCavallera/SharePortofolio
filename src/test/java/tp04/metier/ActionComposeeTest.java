@@ -15,9 +15,11 @@
  */
 package tp04.metier;
 
+import java.util.ArrayList;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import java.util.List;
 
 /**
  *
@@ -34,35 +36,78 @@ public class ActionComposeeTest {
         ActionSimple as1, as2;
         as1 = new ActionSimple("as1");
         as2 = new ActionSimple("as2");
-        ac.enrgComposition(as1, 2);
-        ac.enrgComposition(as2, 3);
-        Assertions.assertTrue(ac.containsAction(as1));
-        Assertions.assertTrue(ac.containsAction(as1));
+        List<ActionSimple> listeAs = new ArrayList<>();
+        List<Float> listePourcentage = new ArrayList<>();
+        listeAs.add(as1);
+        listeAs.add(as2);
+        listePourcentage.add(0.4f);
+        listePourcentage.add(0.6f);
+
+        Assertions.assertTrue(ac.enrgComposition(listeAs, listePourcentage));
     }
 
     @Test
-    public void testCreationACAbsente() {
+    public void testCreationACPourcentageIncorrect() {
         ActionComposee ac = new ActionComposee("ac");
         ActionSimple as1, as2;
         as1 = new ActionSimple("as1");
         as2 = new ActionSimple("as2");
-        ac.enrgComposition(as1, 2);
-        Assertions.assertFalse(ac.containsAction(as2));
+        List<ActionSimple> listeAs = new ArrayList<>();
+        List<Float> listePourcentage = new ArrayList<>();
+        listeAs.add(as1);
+        listePourcentage.add(0.6f);
+
+        Assertions.assertFalse(ac.enrgComposition(listeAs, listePourcentage));
+        listeAs.add(as2);
+        listePourcentage.add(0.6f);
+        Assertions.assertFalse(ac.enrgComposition(listeAs, listePourcentage));
     }
 
     @Test
-    public void testCreationACNull() {
+    public void testCreationACPourcentageNegatif() {
         ActionComposee ac = new ActionComposee("ac");
-        Assertions.assertNull(ac.enrgComposition(null, 2));
+        ActionSimple as1, as2;
+        as1 = new ActionSimple("as1");
+        as2 = new ActionSimple("as2");
+        List<ActionSimple> listeAs = new ArrayList<>();
+        List<Float> listePourcentage = new ArrayList<>();
+        listeAs.add(as1);
+        listeAs.add(as2);
+        listePourcentage.add(1.6f);
+        listePourcentage.add(-0.6f);
 
+        Assertions.assertFalse(ac.enrgComposition(listeAs, listePourcentage));
     }
-    
-    @Test
-    public void testCreationPourcInf() {
-        ActionComposee ac = new ActionComposee("ac");
-        Assertions.assertNull(ac.enrgComposition(new ActionSimple("toto"), -2));
-        Assertions.assertNull(ac.enrgComposition(new ActionSimple("titi"), 0));
 
+    @Test
+    public void testCreationACListeNull() {
+        ActionComposee ac = new ActionComposee("ac");
+        ActionSimple as1, as2;
+        as1 = new ActionSimple("as1");
+        as2 = new ActionSimple("as2");
+        List<ActionSimple> listeAs = new ArrayList<>();
+        List<Float> listePourcentage = new ArrayList<>();
+        listeAs.add(as1);
+        listeAs.add(as2);
+        listePourcentage.add(1.6f);
+        listePourcentage.add(-0.6f);
+
+        Assertions.assertFalse(ac.enrgComposition(null, listePourcentage));
+        Assertions.assertFalse(ac.enrgComposition(listeAs, null));
+    }
+        @Test
+    public void testCreationACListeTailleDifferente() {
+        ActionComposee ac = new ActionComposee("ac");
+        ActionSimple as1, as2;
+        as1 = new ActionSimple("as1");
+        as2 = new ActionSimple("as2");
+        List<ActionSimple> listeAs = new ArrayList<>();
+        List<Float> listePourcentage = new ArrayList<>();
+        listeAs.add(as1);
+        listeAs.add(as2);
+        listePourcentage.add(1f);
+
+        Assertions.assertFalse(ac.enrgComposition(listeAs, listePourcentage));
     }
 
 }

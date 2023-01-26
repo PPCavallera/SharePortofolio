@@ -17,6 +17,7 @@ package tp04.metier;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.List;
 
 /**
  *
@@ -32,13 +33,35 @@ public class ActionComposee extends Action {
         this.mapPanier = new HashMap();
     }
 
-    public ActionSimple enrgComposition(ActionSimple as, float pourcentage) {
-        ActionSimple returnedAction = null;
-        if (pourcentage > 0 & as != null) {
-            this.mapPanier.put(as, pourcentage);
-            returnedAction = as;
+    public boolean enrgComposition(List<ActionSimple> liAs, List<Float> pourcentages) {
+
+        if (liAs == null || pourcentages == null) {
+            return false;
         }
-        return returnedAction;
+        if (liAs.size() != pourcentages.size()) {
+            return false;
+        }
+        float sum = 0;
+        for (float f : pourcentages) {
+            if (f <= 0) {
+                return false;
+            }
+            sum += f;
+        }
+        if (sum != 1) {
+            return false;
+        }
+        this.mapPanier.clear();
+        for (int i = 0; i < liAs.size(); i++) {
+            ActionSimple currentAction = liAs.get(i);
+            if (currentAction != null) {
+                this.mapPanier.put(currentAction, pourcentages.get(i));
+            } else {
+                this.mapPanier.clear();
+                return false;
+            }
+        }
+        return true;
     }
 
     public boolean containsAction(ActionSimple a) {
