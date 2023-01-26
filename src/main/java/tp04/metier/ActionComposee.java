@@ -28,11 +28,22 @@ public class ActionComposee extends Action {
     // attribut lien
     Map<ActionSimple, Float> mapPanier;
 
+    /**
+     * Action composee constructor
+     * 
+     * @param libelle 
+     */
     public ActionComposee(String libelle) {
         super(libelle);
         this.mapPanier = new HashMap();
     }
 
+    /**
+     * Register action function 
+     * @param liAs
+     * @param pourcentages
+     * @return true if everything went ok, else false
+     */
     public boolean enrgComposition(List<ActionSimple> liAs, List<Float> pourcentages) {
 
         if (liAs == null || pourcentages == null) {
@@ -64,10 +75,20 @@ public class ActionComposee extends Action {
         return true;
     }
 
+    /**
+     * Contains action
+     * @param a
+     * @return true if a in ac, else false
+     */
     public boolean containsAction(ActionSimple a) {
         return this.mapPanier.containsKey(a);
     }
 
+    /**
+     * Get global value for one day
+     * @param j
+     * @return the value for the day j
+     */
     @Override
     public float valeur(Jour j) {
         float valeur;
