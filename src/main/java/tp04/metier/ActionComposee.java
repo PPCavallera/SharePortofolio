@@ -135,8 +135,8 @@ public class ActionComposee extends Action {
         double valeur;
 
         valeur = 0;
-        for (ActionSimple as : this.mapPanier.keySet()) {
-            valeur = valeur + (as.valeur(j) * this.mapPanier.get(as));
+        for (Map.Entry<ActionSimple, Double> entry : this.mapPanier.entrySet()) {
+            valeur = valeur + (entry.getKey().valeur(j) * entry.getValue());
         }
 
         return valeur;
