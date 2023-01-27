@@ -13,8 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package tp04.metier;
+package tp.metier;
 
+import tp.metier.ActionSimple;
+import tp.metier.Portefeuille;
+import tp.metier.ActionComposee;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;

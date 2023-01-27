@@ -13,8 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package tp04.metier;
+package tp.metier;
 
+import tp.metier.Jour;
+import tp.metier.ActionSimple;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
@@ -22,20 +24,23 @@ import org.junit.jupiter.api.Assertions;
  *
  * @author Pierre
  */
-public class ActionTestUS4 {
-
+public class ActionTestUS6 {
     @Test
-    public void testValeurJour() {
+    public void testActionSimple() {
         ActionSimple axa;
         Jour j1;
         j1 = new Jour(2014, 1);
-        final double value = 1.37;
-        axa = new ActionSimple("AXA");
+        final double value = 1.37F;
+        final String lib = "AXA";
+        axa = new ActionSimple(lib);
 
         axa.enrgCours(j1, value);
 
-        final double result = axa.valeur(j1);
+        final double resultValue = axa.valeur(j1);
+        final String resultLibelle = axa.getLibelle();
 
-        Assertions.assertEquals(value, result);
+        Assertions.assertEquals(value, resultValue);
+        Assertions.assertEquals(lib, resultLibelle);
     }
+
 }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package tp04.metier;
+package tp.metier;
 
 import java.util.Objects;
 
@@ -58,11 +58,9 @@ public abstract class Action {
         return hash;
     }
 
-    /**
-     * Equals override method
-     * 
-     * @param obj
-     * @return boolean
+    /**Equals override method.
+     *@param obj
+     *@return boolean
      */
     @Override
     public boolean equals(Object obj) {

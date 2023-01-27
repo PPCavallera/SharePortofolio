@@ -13,31 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package tp04.metier;
-
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+package tp.metier;
 
 /**
  *
- * @author PPC
+ * @author perussel
  */
-public class ActionTest {
-
-    public ActionTest() {
-    }
-
-    @Test
-    public void test_equal_simple() {
-        Action a1 = new ActionSimple("same_text");
-        Action a2 = new ActionSimple("same_text");
-        assertTrue(a1.equals(a2));
-    }
-
-    @Test
-    public void test_equal_complexe() {
-        Action a1 = new ActionComposee("same_text");
-        Action a2 = new ActionComposee("same_text");
-        assertTrue(a1.equals(a2));
-    }
+public class Cours {
+    
 }

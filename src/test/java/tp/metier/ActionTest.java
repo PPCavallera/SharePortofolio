@@ -13,21 +13,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package tp04.metier;
+package tp.metier;
 
+import tp.metier.ActionSimple;
+import tp.metier.Action;
+import tp.metier.ActionComposee;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *
  * @author PPC
  */
-public class ActionSimpleTest {
+public class ActionTest {
 
-    public ActionSimpleTest() {
+    public ActionTest() {
     }
 
     @Test
-    public void testSomeMethod() {
+    public void test_equal_simple() {
+        Action a1 = new ActionSimple("same_text");
+        Action a2 = new ActionSimple("same_text");
+        assertTrue(a1.equals(a2));
     }
 
+    @Test
+    public void test_equal_complexe() {
+        Action a1 = new ActionComposee("same_text");
+        Action a2 = new ActionComposee("same_text");
+        assertTrue(a1.equals(a2));
+    }
 }

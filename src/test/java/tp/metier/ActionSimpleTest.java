@@ -13,12 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package tp04.metier;
+package tp.metier;
+
+import org.junit.jupiter.api.Test;
 
 /**
  *
- * @author perussel
+ * @author PPC
  */
-public class Cours {
-    
+public class ActionSimpleTest {
+
+    public ActionSimpleTest() {
+    }
+
+    @Test
+    public void testSomeMethod() {
+    }
+
 }
