@@ -15,7 +15,6 @@
  */
 package tp04.metier;
 
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -56,7 +55,7 @@ public class Portefeuille {
     }
 
     public Portefeuille() {
-        this.mapLignes = new HashMap();
+        this.mapLignes = new HashMap<Action, LignePortefeuille>();
     }
 
     /**
@@ -76,6 +75,7 @@ public class Portefeuille {
 
     /**
      * Get the global value for a given day
+     * 
      * @param j, the day
      * @return the global value for j
      */
@@ -110,7 +110,7 @@ public class Portefeuille {
      * @return l'action si elle est achetée, null sinon
      */
     public Action acheter(Action a, int q) {
-        if (q > 0 && a != null) { // 
+        if (q > 0 && a != null) { //
             if (!this.mapLignes.containsKey(a)) {
 
                 this.mapLignes.put(a, new LignePortefeuille(a, q));
@@ -130,7 +130,7 @@ public class Portefeuille {
      *
      * @param a, Action à vendre
      * @param q, Quantite à vendre
-     * @return, a si l'action a étévendue, null sinon
+     *           @return, a si l'action a étévendue, null sinon
      */
     public Action vendre(Action a, int q) {
         Action returnedAction = null;
@@ -151,8 +151,8 @@ public class Portefeuille {
         return this.mapLignes.toString();
     }
 
-    public float valeur(Jour j) {
-        float total = 0;
+    public double valeur(Jour j) {
+        double total = 0.;
         for (LignePortefeuille lp : this.mapLignes.values()) {
             total = total + (lp.getQte() * lp.getAction().valeur(j));
         }

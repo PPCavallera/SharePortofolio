@@ -23,12 +23,12 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author PPC
  */
 public class ActionTest {
-    
+
     public ActionTest() {
     }
 
     @Test
     public void testSomeMethod() {
     }
-    
+
 }
