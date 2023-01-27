@@ -15,6 +15,7 @@
  */
 package tp.metier;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
@@ -95,16 +96,16 @@ public class ActionComposee extends Action {
 
         if (to_return) {
             // confirm that the percentages sum to one.
-            double sum = 0.0;
+            BigDecimal sum = new BigDecimal(0.0);
             for (double f : pourcentages) {
                 if (f <= 0) {
                     to_return = false;
                 }
-                sum += f;
+                sum.add(new BigDecimal(f));
             }
 
-            final double one = 1.0;
-            if (sum != one) {
+            final BigDecimal one = new BigDecimal(1.0);
+            if (sum.equals(one)) {
                 to_return = false;
             }
             return to_return; // if all passed, this variable is still true
