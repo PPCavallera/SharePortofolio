@@ -23,12 +23,58 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author PPC
  */
 public class JourTest {
-    
+
     public JourTest() {
     }
 
     @Test
-    public void testSomeMethod() {
+    public void test_compare_eq() {
+        // x==y
+        Jour j1 = new Jour(2022, 22);
+        Jour j2 = new Jour(2022, 22);
+
+        int result = j1.compareTo(j2);
+        assertEquals(result, 0);
     }
-    
+
+    @Test
+    public void test_compare_bigger1() {
+        // x<y
+        Jour j1 = new Jour(2022, 22);
+        Jour j2 = new Jour(2023, 22);
+
+        int result = j1.compareTo(j2);
+        assertEquals(result, -1);
+    }
+
+    @Test
+    public void test_compare_bigger2() {
+        // x<y
+        Jour j1 = new Jour(2022, 22);
+        Jour j2 = new Jour(2022, 23);
+
+        int result = j1.compareTo(j2);
+        assertEquals(result, -1);
+    }
+
+    @Test
+    public void test_compare_smaller1() {
+        // x>y
+        Jour j1 = new Jour(2023, 22);
+        Jour j2 = new Jour(2022, 22);
+
+        int result = j1.compareTo(j2);
+        assertEquals(result, 1);
+    }
+
+    @Test
+    public void test_compare_smaller() {
+        // x>y
+        Jour j1 = new Jour(2022, 23);
+        Jour j2 = new Jour(2022, 22);
+
+        int result = j1.compareTo(j2);
+        assertEquals(result, 1);
+    }
+
 }
