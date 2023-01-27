@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *
- * @author PPC
+ * @author De La Torre.
  */
 public class JourTest {
 
@@ -68,7 +68,7 @@ public class JourTest {
     }
 
     @Test
-    public void test_compare_smaller() {
+    public void test_compare_smaller2() {
         // x>y
         Jour j1 = new Jour(2022, 23);
         Jour j2 = new Jour(2022, 22);
