@@ -39,7 +39,7 @@ public abstract class Action {
      * 
      * @param libelle
      */
-    public Action(String libelle) {
+    protected Action(String libelle) {
         this.libelle = libelle;
     }
 
