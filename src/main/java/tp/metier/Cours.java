@@ -19,6 +19,6 @@ package tp.metier;
  *
  * @author perussel
  */
-public class Cours {
-    
+public interface Cours 
+{
 }
