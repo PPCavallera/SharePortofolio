@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 package tp04.metier;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
+
 /**
  *
  * @author Pierre
@@ -26,17 +28,17 @@ public class ActionTestUS6 {
         ActionSimple axa;
         Jour j1;
         j1 = new Jour(2014, 1);
-        final float value = 1.37F;
+        final double value = 1.37F;
         final String lib = "AXA";
         axa = new ActionSimple(lib);
-        
+
         axa.enrgCours(j1, value);
-        
-        final float resultValue = axa.valeur(j1);
+
+        final double resultValue = axa.valeur(j1);
         final String resultLibelle = axa.getLibelle();
-        
+
         Assertions.assertEquals(value, resultValue);
         Assertions.assertEquals(lib, resultLibelle);
-    }   
+    }
 
 }

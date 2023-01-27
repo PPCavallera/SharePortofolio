@@ -36,16 +36,16 @@ public class ActionSimple extends Action {
         // Action simple initialisée comme 1 action
         super(libelle);
         // init spécifique
-        this.mapCours = new HashMap();
+        this.mapCours = new HashMap<Jour, Cours>();
     }
 
     /**
      * Register value for a day
      *
      * @param j, the day
-     * @param v , the value
+     * @param v  , the value
      */
-    public void enrgCours(Jour j, float v) {
+    public void enrgCours(Jour j, Double v) {
         if (this.mapCours.containsKey(j) == false) {
             this.mapCours.put(j, new Cours(j, v));
         }
@@ -53,15 +53,16 @@ public class ActionSimple extends Action {
 
     /**
      * Get the value for a given day
+     * 
      * @param j the day
      * @return the value for the day
      */
     @Override
-    public float valeur(Jour j) {
+    public Double valeur(Jour j) {
         if (this.mapCours.containsKey(j) == true) {
             return this.mapCours.get(j).getValeur();
         } else {
-            return 0; // definition d'une constante possible
+            return 0.; // definition d'une constante possible
         }
     }
 
@@ -70,9 +71,9 @@ public class ActionSimple extends Action {
 
         private Jour jour;
 
-        private float valeur;
+        private double valeur;
 
-        public float getValeur() {
+        public double getValeur() {
             return valeur;
         }
 
@@ -80,7 +81,7 @@ public class ActionSimple extends Action {
             return jour;
         }
 
-        public Cours(Jour jour, float valeur) {
+        public Cours(Jour jour, Double valeur) {
             this.jour = jour;
             this.valeur = valeur;
         }

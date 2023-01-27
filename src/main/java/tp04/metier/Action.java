@@ -36,17 +36,18 @@ public abstract class Action {
 
     /**
      * Action constructor
+     * 
      * @param libelle
      */
     public Action(String libelle) {
         this.libelle = libelle;
     }
 
-    
-    public abstract float valeur(Jour j);
+    public abstract Double valeur(Jour j);
 
     /**
      * Hash method overrided
+     * 
      * @return action's hashcode
      */
     @Override
@@ -58,6 +59,7 @@ public abstract class Action {
 
     /**
      * Equals override method
+     * 
      * @param obj
      * @return boolean
      */
@@ -78,6 +80,7 @@ public abstract class Action {
 
     /**
      * To string method
+     * 
      * @return libelle
      */
     public String toString() {

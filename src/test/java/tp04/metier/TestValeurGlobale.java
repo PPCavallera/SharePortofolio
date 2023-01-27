@@ -32,10 +32,10 @@ public class TestValeurGlobale {
         final Jour j1 = new Jour(2023, 1);
         final Jour j2 = new Jour(2023, 2);
 
-        as1.enrgCours(j1, 1);
-        as2.enrgCours(j1, 2);
-        as1.enrgCours(j2, 4);
-        as2.enrgCours(j2, 5);
+        as1.enrgCours(j1, 1.);
+        as2.enrgCours(j1, 2.);
+        as1.enrgCours(j2, 4.);
+        as2.enrgCours(j2, 5.);
 
         po.acheter(as1, 2);
         po.acheter(as2, 3);
@@ -50,8 +50,8 @@ public class TestValeurGlobale {
         final ActionSimple as = new ActionSimple("Toto");
         final ActionSimple as2 = new ActionSimple("Tata");
         final Jour j = new Jour(2023, 1);
-        as.enrgCours(j, 1);
-        as2.enrgCours(j, 2);
+        as.enrgCours(j, 1.);
+        as2.enrgCours(j, 2.);
         po.acheter(as, 1);
         po.acheter(as2, 1);
 
@@ -66,8 +66,8 @@ public class TestValeurGlobale {
         final Jour j1 = new Jour(2023, 1);
         final Jour j3 = new Jour(2023, 2);
 
-        as1.enrgCours(j1, 1);
-        as2.enrgCours(j1, 2);
+        as1.enrgCours(j1, 1.);
+        as2.enrgCours(j1, 2.);
 
         po.acheter(as1, 2);
         po.acheter(as2, 3);

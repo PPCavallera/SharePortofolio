@@ -75,11 +75,11 @@ public class PortefeuilleTestVendre {
         as1 = new ActionSimple("as1");
         as2 = new ActionSimple("as2");
         List<ActionSimple> listeAs = new ArrayList<>();
-        List<Float> listePourcentage = new ArrayList<>();
+        List<Double> listePourcentage = new ArrayList<>();
         listeAs.add(as1);
         listeAs.add(as2);
-        listePourcentage.add(0.4f);
-        listePourcentage.add(0.6f);
+        listePourcentage.add(0.4);
+        listePourcentage.add(0.6);
 
         ac.enrgComposition(listeAs, listePourcentage);
         po.acheter(ac, 4);
