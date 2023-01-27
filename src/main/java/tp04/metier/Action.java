@@ -28,7 +28,8 @@ public abstract class Action {
      * 
      * @param libelle
      */
-    protected Action(String libelle) {
+    protected Action(String libelle) // force new line
+    {
         this.libelle = libelle;
     }
 
