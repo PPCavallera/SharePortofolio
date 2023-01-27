@@ -89,7 +89,7 @@ public class ActionComposee extends Action {
         }
 
         // confirm that the two lists are of equal size.
-        if (liAs.size() != pourcentages.size() && to_return) {
+        if (to_return && liAs.size() != pourcentages.size()) {
             to_return = false;
         }
 
