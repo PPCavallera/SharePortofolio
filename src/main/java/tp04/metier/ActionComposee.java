@@ -69,14 +69,15 @@ public class ActionComposee extends Action {
         }
 
         // confirm that the percentages sum to one.
-        double sum = 0;
+        double sum = 0.0;
         for (double f : pourcentages) {
             if (f <= 0) {
                 return false;
             }
             sum += f;
         }
-        if (sum != 1.) {
+        final double one = 1.0;
+        if (sum != one) {
             return false;
         }
 
