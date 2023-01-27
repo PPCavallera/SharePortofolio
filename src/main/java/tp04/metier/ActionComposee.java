@@ -22,47 +22,68 @@ import java.util.List;
 /**
  *
  * @author perussel
+ * @author Camilo De La Torre
+ * @author Thibaut Denis
  */
+
 public class ActionComposee extends Action {
 
-    // attribut lien
-    Map<ActionSimple, Float> mapPanier;
+    // Storage for shares that make the composed share.
+    Map<ActionSimple, Double> mapPanier;
 
     /**
      * Action composee constructor
      * 
-     * @param libelle 
+     * @param libelle : Le nom de l'action.
      */
     public ActionComposee(String libelle) {
         super(libelle);
-        this.mapPanier = new HashMap();
+        this.mapPanier = new HashMap<ActionSimple, Double>();
     }
 
     /**
-     * Register action function 
-     * @param liAs
-     * @param pourcentages
-     * @return true if everything went ok, else false
+     * Compose a share with the simple actions in liAs.
+     * 
+     * For each action, a percentage has to be provided.
+     * 
+     * Overall, the sum o the given percentages has to sum to 1.
+     * 
+     * A call to this function always clears the stored actions (if any) in the
+     * instance.
+     * 
+     * @param liAs         List of actions that compose the action compose
+     * @param pourcentages : Double indicating the pct of the share with respect to
+     *                     the total percentage (100%)
+     * @return true if shares where correctly saved. False if not.
      */
-    public boolean enrgComposition(List<ActionSimple> liAs, List<Float> pourcentages) {
+    public boolean enrgComposition(List<ActionSimple> liAs, List<Double> pourcentages) {
 
+        // handle null.
         if (liAs == null || pourcentages == null) {
             return false;
         }
+
+        // confirm that the two lists are of equal size.
         if (liAs.size() != pourcentages.size()) {
             return false;
         }
-        float sum = 0;
-        for (float f : pourcentages) {
+
+        // confirm that the percentages sum to one.
+        double sum = 0;
+        for (double f : pourcentages) {
             if (f <= 0) {
                 return false;
             }
             sum += f;
         }
-        if (sum != 1) {
+        if (sum != 1.) {
             return false;
         }
+
+        // clear the precedent map.
         this.mapPanier.clear();
+
+        // Fill the map with the simple shares.
         for (int i = 0; i < liAs.size(); i++) {
             ActionSimple currentAction = liAs.get(i);
             if (currentAction != null) {
@@ -76,9 +97,10 @@ public class ActionComposee extends Action {
     }
 
     /**
-     * Contains action
-     * @param a
-     * @return true if a in ac, else false
+     * Check if the map of the instance contains a given simple share.
+     * 
+     * @param a : A simple share.
+     * @return true if a in map, else false
      */
     public boolean containsAction(ActionSimple a) {
         return this.mapPanier.containsKey(a);
@@ -86,12 +108,13 @@ public class ActionComposee extends Action {
 
     /**
      * Get global value for one day
-     * @param j
+     * 
+     * @param j : A day
      * @return the value for the day j
      */
     @Override
-    public float valeur(Jour j) {
-        float valeur;
+    public Double valeur(Jour j) {
+        double valeur;
 
         valeur = 0;
         for (ActionSimple as : this.mapPanier.keySet()) {
