@@ -22,7 +22,7 @@ import java.util.Map;
  *
  * @author perussel
  */
-public class ActionSimple extends Action {
+public class ActionSimple extends Action implements Comparable<ActionSimple> {
 
     // attribut lien
     private Map<Jour, Cours> mapCours;
@@ -86,5 +86,10 @@ public class ActionSimple extends Action {
             this.valeur = valeur;
         }
 
+    }
+
+    @Override
+    public int compareTo(ActionSimple o) {
+        return this.getLibelle().compareTo(o.getLibelle());
     }
 }
