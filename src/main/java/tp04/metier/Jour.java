@@ -19,7 +19,7 @@ package tp04.metier;
  *
  * @author perussel
  */
-public class Jour {
+public class Jour implements Comparable<Jour> {
 
     private int annee;
     private int noJour;
@@ -32,7 +32,6 @@ public class Jour {
     public int getAnnee() {
         return annee;
     }
-
 
     /**
      * Get the value of noJour
@@ -73,5 +72,23 @@ public class Jour {
         }
         return true;
     }
-  
+
+    @Override
+    public int compareTo(Jour j) {
+
+        boolean j_year_bigger = j.annee > this.annee;
+        boolean j_year_same = j.annee == this.annee;
+
+        boolean j_day_bigger = j.noJour > this.noJour;
+
+        if (this.equals(j)) {
+            return 0;
+        } else if (j_year_bigger ||
+                (j_year_same && j_day_bigger)) {
+            return -1;
+        } else {
+            return 1;
+        }
+    }
+
 }

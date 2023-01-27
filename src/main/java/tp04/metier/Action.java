@@ -23,6 +23,16 @@ import java.util.Objects;
  */
 public abstract class Action {
 
+    /**
+     * Action constructor
+     * 
+     * @param libelle
+     */
+    protected Action(String libelle) // force new line
+    {
+        this.libelle = libelle;
+    }
+
     private String libelle;
 
     /**
@@ -32,15 +42,6 @@ public abstract class Action {
      */
     public String getLibelle() {
         return libelle;
-    }
-
-    /**
-     * Action constructor
-     * 
-     * @param libelle
-     */
-    public Action(String libelle) {
-        this.libelle = libelle;
     }
 
     public abstract Double valeur(Jour j);

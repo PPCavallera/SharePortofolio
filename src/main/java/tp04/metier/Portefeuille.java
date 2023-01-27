@@ -142,6 +142,8 @@ public class Portefeuille {
             } else if (currentQte == q) {
                 this.mapLignes.remove(a);
                 returnedAction = a;
+            } else {
+                return null;
             }
         }
         return returnedAction;

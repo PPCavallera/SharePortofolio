@@ -28,7 +28,16 @@ public class ActionTest {
     }
 
     @Test
-    public void testSomeMethod() {
+    public void test_equal_simple() {
+        Action a1 = new ActionSimple("same_text");
+        Action a2 = new ActionSimple("same_text");
+        assertTrue(a1.equals(a2));
     }
 
+    @Test
+    public void test_equal_complexe() {
+        Action a1 = new ActionComposee("same_text");
+        Action a2 = new ActionComposee("same_text");
+        assertTrue(a1.equals(a2));
+    }
 }

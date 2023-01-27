@@ -57,43 +57,61 @@ public class ActionComposee extends Action {
      * @return true if shares where correctly saved. False if not.
      */
     public boolean enrgComposition(List<ActionSimple> liAs, List<Double> pourcentages) {
+        boolean pass_rules = this.verifyComposition(liAs, pourcentages);
+        if (pass_rules) {
+            // clear the precedent map.
+            this.mapPanier.clear();
+
+            // Fill the map with the simple shares.
+            for (int i = 0; i < liAs.size(); i++) {
+                ActionSimple currentAction = liAs.get(i);
+                if (currentAction != null) {
+                    this.mapPanier.put(currentAction, pourcentages.get(i));
+                } else {
+                    this.mapPanier.clear();
+                    return false;
+                }
+            }
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    public boolean verifyComposition(List<ActionSimple> liAs, List<Double> pourcentages) {
+
+        boolean to_return = true;
 
         // handle null.
         if (liAs == null || pourcentages == null) {
-            return false;
+            to_return = false;
         }
 
         // confirm that the two lists are of equal size.
-        if (liAs.size() != pourcentages.size()) {
-            return false;
+        if (liAs.size() != pourcentages.size() && to_return) {
+            to_return = false;
         }
 
-        // confirm that the percentages sum to one.
-        double sum = 0;
-        for (double f : pourcentages) {
-            if (f <= 0) {
-                return false;
+        if (to_return) {
+            // confirm that the percentages sum to one.
+            double sum = 0.0;
+            for (double f : pourcentages) {
+                if (f <= 0) {
+                    to_return = false;
+                }
+                sum += f;
             }
-            sum += f;
-        }
-        if (sum != 1.) {
-            return false;
-        }
 
-        // clear the precedent map.
-        this.mapPanier.clear();
-
-        // Fill the map with the simple shares.
-        for (int i = 0; i < liAs.size(); i++) {
-            ActionSimple currentAction = liAs.get(i);
-            if (currentAction != null) {
-                this.mapPanier.put(currentAction, pourcentages.get(i));
-            } else {
-                this.mapPanier.clear();
-                return false;
+            final double one = 1.0;
+            if (sum != one) {
+                to_return = false;
             }
+            return to_return; // if all passed, this variable is still true
+        } else {
+            return to_return;
         }
-        return true;
+
     }
 
     /**
@@ -117,8 +135,8 @@ public class ActionComposee extends Action {
         double valeur;
 
         valeur = 0;
-        for (ActionSimple as : this.mapPanier.keySet()) {
-            valeur = valeur + (as.valeur(j) * this.mapPanier.get(as));
+        for (Map.Entry<ActionSimple, Double> entry : this.mapPanier.entrySet()) {
+            valeur = valeur + (entry.getKey().valeur(j) * entry.getValue());
         }
 
         return valeur;
